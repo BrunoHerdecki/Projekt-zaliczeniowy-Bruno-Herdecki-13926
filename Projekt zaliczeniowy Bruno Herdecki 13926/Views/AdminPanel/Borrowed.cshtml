@@ -1,0 +1,83 @@
+@model IEnumerable<Projekt_zaliczeniowy_Bruno_Herdecki_13926.Models.ReservedBookDto>
+
+@{
+    ViewData["Title"] = "Borrowed";
+}
+
+<table class="table">
+    <h2 style="text-align:center">Currently borrowed</h2>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpectedReturnDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Where(x => !x.HasReturned))
+        {
+            <tr style="background-color: lightgreen">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h2 style="text-align:center; margin-top:100px">Borrowed in past</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReservedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExpectedReturnDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Where(x => x.HasReturned))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ReservedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="AdminPanel">Back to List</a>

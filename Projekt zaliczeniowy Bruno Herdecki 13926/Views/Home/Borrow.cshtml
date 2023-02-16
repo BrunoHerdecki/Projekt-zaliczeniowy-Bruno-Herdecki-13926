@@ -1,0 +1,48 @@
+﻿@model Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity.HistoryOfReservation
+
+}
+@{
+    ViewData["Title"] = "Borrow";
+}
+
+<h1>Create</h1>
+
+<h4>Movie</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Borrow">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" readonly="true" />
+                <span asp-validation-for="Books.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Author" class="control-label"></label>
+                <input asp-for="Author" class="form-control" readonly="true" />
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ExpectedReturnDate" class="control-label"></label>
+                <input asp-for="ExpectedReturnDate" class="form-control" type="date" />
+                <span asp-validation-for="ExpectedReturnDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+            <input asp-for="BookId" class="form-control" style="visibility: hidden" />
+            <input asp-for="ReservedDate" class="form-control" type="date" style="visibility: hidden" />
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="AdminPanel">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

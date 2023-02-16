@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Projekt_zaliczeniowy_Bruno_Herdecki_13926.Models.BookDto>
+
+@{
+    ViewData["Title"] = "Borrow book";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Author)
+                    </td>
+                    <td>
+                        <a asp-action="Borrow" asp-route-id="@item.BookId">Borrow this book</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
