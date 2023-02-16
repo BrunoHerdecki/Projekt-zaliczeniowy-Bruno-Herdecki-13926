@@ -67,6 +67,7 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = Roles.CUSTOMER)]
         public async Task<IActionResult> Borrow(HistoryOfReservation book)
         {
             var userIdString = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);

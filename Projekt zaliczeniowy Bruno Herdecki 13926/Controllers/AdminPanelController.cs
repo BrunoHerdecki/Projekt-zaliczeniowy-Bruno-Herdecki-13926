@@ -48,7 +48,6 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Controllers
             return View(adminPanelModel);
         }
 
-        [Authorize(Roles = Roles.ADMIN)]
         public IActionResult Borrowed(int id)
         {
             using var db = new LibraryContext();
