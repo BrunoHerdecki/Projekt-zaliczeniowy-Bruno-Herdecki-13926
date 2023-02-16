@@ -22,33 +22,81 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity
                 db.Add(
                     new Users()
                     {
-                        Email = "test@gmail.com",
-                        Name = "Bruno",
+                        Email = "admin@admin.com",
+                        Name = "Nikolaas",
                         IsAdmin = true,
-                        Surrname = "Random",
-                        Password = "123",
-                        Pesel = "12332112332",
+                        Surrname = "Delphinus",
+                        Password = "Password1",
+                        Pesel = "12345678901",
                         UserId = 1
                     });
 
                 db.Add(
                     new Users()
                     {
-                        Email = "testmail@gmail.com",
-                        Name = "Julia",
+                        Email = "test@test.com",
+                        Name = "LimAngela",
                         IsAdmin = false,
-                        Surrname = "Notrandom",
-                        Password = "123",
+                        Surrname = "Arianna",
+                        Password = "Password1",
                         Pesel = "32132132132",
                         UserId = 2
+                    });
+
+                db.Add(
+                    new Users()
+                    {
+                        Email = "PleioneFiachra@gmail.com",
+                        Name = "Pleione",
+                        IsAdmin = false,
+                        Surrname = "Fiachra",
+                        Password = "Password1",
+                        Pesel = "22233311224",
+                        UserId = 3
+                    });
+
+                db.Add(
+                    new Users()
+                    {
+                        Email = "Setare@gmail.com",
+                        Name = "Gerry",
+                        IsAdmin = false,
+                        Surrname = "Setare",
+                        Password = "Password1",
+                        Pesel = "33441178900",
+                        UserId = 4
+                    });
+
+                db.Add(
+                    new Users()
+                    {
+                        Email = "LimHraban@gmail.com",
+                        Name = "Lim",
+                        IsAdmin = false,
+                        Surrname = "Hraban",
+                        Password = "Password1",
+                        Pesel = "32132132132",
+                        UserId = 5
+                    });
+
+                db.Add(
+                    new Users()
+                    {
+                        Email = "LimBrycen@gmail.com",
+                        Name = "Lim",
+                        IsAdmin = false,
+                        Surrname = "Brycen",
+                        Password = "Password1",
+                        Pesel = "32132199132",
+                        UserId = 6
                     });
 
                 db.Add(
                    new Books()
                    {
                        BookId = 1,
-                       Title = "Fajny Tytul ksiazki",
-                       Author = "Ktos Tam Nie Wiem Kto",
+                       Title = "Blacksmith Of Destruction",
+                       Author = "Filomena Prakash",
                        IsBorrowed = true,
                    });
 
@@ -56,8 +104,44 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity
                    new Books()
                    {
                        BookId = 2,
-                       Title = "Niefajny Tytul ksiazki",
-                       Author = "Nie wiem kto",
+                       Title = "Blacksmith Of Destruction",
+                       Author = "Filomena Prakash",
+                       IsBorrowed = false,
+                   });
+
+                db.Add(
+                   new Books()
+                   {
+                       BookId = 3,
+                       Title = "Owls Of The Frontline",
+                       Author = "Helena Simba",
+                       IsBorrowed = true,
+                   });
+
+                db.Add(
+                   new Books()
+                   {
+                       BookId = 4,
+                       Title = "Soldiers Of The Void",
+                       Author = "Helena Simba",
+                       IsBorrowed = false,
+                   });
+
+                db.Add(
+                   new Books()
+                   {
+                       BookId = 5,
+                       Title = "Assassins And Spiders",
+                       Author = "Ceadda Godofredo",
+                       IsBorrowed = false,
+                   });
+
+                db.Add(
+                   new Books()
+                   {
+                       BookId = 6,
+                       Title = "Tree Without A Conscience",
+                       Author = "Finn Houston",
                        IsBorrowed = false,
                    });
 
@@ -69,9 +153,8 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity
                       UserId = 2,
                       ReservedDate = DateTime.Now,
                       ExpectedReturnDate = DateTime.Parse("2022/12/02"),
-                      //ExpectedReturnDate = DateTime.Now.AddDays(14),
                   });
-                
+
                 db.Add(
                   new HistoryOfReservation()
                   {
@@ -80,6 +163,50 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity
                       UserId = 2,
                       ReservedDate = DateTime.Parse("2023/02/02"),
                       ExpectedReturnDate = DateTime.Parse("2023/12/02"),
+                      HasReturned = true,
+                  });
+                
+                db.Add(
+                  new HistoryOfReservation()
+                  {
+                      HistoryId = 3,
+                      BookId = 3,
+                      UserId = 2,
+                      ReservedDate = DateTime.Parse("2022/10/02"),
+                      ExpectedReturnDate = DateTime.Parse("2023/01/01"),
+                      HasReturned = false,
+                  });
+
+                db.Add(
+                  new HistoryOfReservation()
+                  {
+                      HistoryId = 4,
+                      BookId = 4,
+                      UserId = 3,
+                      ReservedDate = DateTime.Parse("2023/02/02"),
+                      ExpectedReturnDate = DateTime.Parse("2023/12/02"),
+                      HasReturned = true,
+                  });
+                
+                db.Add(
+                  new HistoryOfReservation()
+                  {
+                      HistoryId = 5,
+                      BookId = 5,
+                      UserId = 2,
+                      ReservedDate = DateTime.Now,
+                      ExpectedReturnDate = DateTime.Parse("2022/12/02"),
+                      HasReturned = true,
+                  });
+
+                db.Add(
+                  new HistoryOfReservation()
+                  {
+                      HistoryId = 6,
+                      BookId = 2,
+                      UserId = 2,
+                      ReservedDate = DateTime.Parse("2021/02/02"),
+                      ExpectedReturnDate = DateTime.Parse("2021/10/10"),
                       HasReturned = true,
                   });
 

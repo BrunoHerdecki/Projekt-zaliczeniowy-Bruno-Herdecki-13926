@@ -28,9 +28,12 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.Author)
                     </td>
-                    <td>
-                        <a asp-action="Borrow" asp-route-id="@item.BookId">Borrow this book</a>
-                    </td>
+                    @if (User.IsInRole(Roles.CUSTOMER))
+                    {
+                        <td>
+                            <a asp-action="Borrow" asp-route-id="@item.BookId">Borrow this book</a>
+                        </td>
+                    }
                 </tr>
             }
         }

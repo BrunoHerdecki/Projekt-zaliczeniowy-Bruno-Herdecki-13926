@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Projekt_zaliczeniowy_Bruno_Herdecki_13926.Models;
 using Projekt_zaliczeniowy_Bruno_Herdecki_13926.Entity;
-using Microsoft.EntityFrameworkCore;
-using System.Net;
 using System.Security.Claims;
 
 namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Controllers
@@ -95,7 +93,7 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Controllers
                 await db.SaveChangesAsync();
             }
 
-            return View(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> LogOut()

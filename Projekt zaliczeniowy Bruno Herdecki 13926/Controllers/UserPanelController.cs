@@ -62,8 +62,7 @@ namespace Projekt_zaliczeniowy_Bruno_Herdecki_13926.Controllers
             books.IsBorrowed = false;
 
             db.SaveChanges();
-
-            return View(nameof(UserPanel));
+            return RedirectToAction("UserPanel");
         }
     }
 }

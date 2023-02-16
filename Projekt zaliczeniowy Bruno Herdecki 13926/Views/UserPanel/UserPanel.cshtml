@@ -66,6 +66,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.ExpectedReturnDate)
             </th>
+            <th></th>
         </tr>
     </thead>
     @if (Model != null)
@@ -85,6 +86,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.ExpectedReturnDate)
+                    </td>
+                    <td>
+                        <a asp-action="Return" asp-route-id="@item.HistoryId">Return this book</a>
                     </td>
                 </tr>
             }
@@ -133,4 +137,3 @@
         </tbody>
     }
 </table>
-<a asp-action="AdminPanel">Back to List</a>
